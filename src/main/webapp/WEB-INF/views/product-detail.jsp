@@ -2,18 +2,15 @@
   Created by IntelliJ IDEA.
   User: Amir
   Date: 2/26/2022
-  Time: 10:00 AM
+  Time: 2:08 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>home</title>
+    <title>Title</title>
 </head>
 <body>
-
-    <a href="/product/show">Add Product</a> <br/><br/>
-    <a href="/product/get-all">Show Products</a>
 
 </body>
 </html>
