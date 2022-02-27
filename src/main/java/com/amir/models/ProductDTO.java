@@ -1,19 +1,26 @@
 package com.amir.models;
 
 import lombok.*;
+import org.springframework.stereotype.Component;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 import java.util.HashMap;
 import java.util.Map;
 
 @Setter
 @Getter
 @ToString
-
+@Component
 @AllArgsConstructor
 public class ProductDTO {
 
     private int id;
+    @NotEmpty
+    @Size(min=3 , message = "name must be more than 3 chars")
     private String name;
+    @Min(value = 1000 , message = "price should be greater than 1000")
     private int price;
     private String type;
     private Map<String,String> validTypes;

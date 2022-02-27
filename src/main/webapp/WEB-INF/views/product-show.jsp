@@ -13,19 +13,22 @@
 </head>
 <body>
 
-    <form action="/product/save" method="post">
-        Name : <input name="name" type="text"/> <br/><br/>
-        Price : <input name="price" type="text"/><br/><br/>
-        <input type="submit" value="Add Product"/> <br/><br/>
-    </form>
+<form action="/product/save" method="post">
+    Name : <input name="name" type="text"/> <br/><br/>
+    Price : <input name="price" type="text"/><br/><br/>
+    <input type="submit" value="Add Product"/> <br/><br/>
+</form>
 
-<form:form action="/product/save" method="post" modelAttribute="dto" >
-    Name : <form:input path="name" /><br/><br/>
-    Price : <form:input path="price" /><br/><br/>
+<form:form action="/product/save" method="post" modelAttribute="dto">
+    Name : <form:input path="name"/><br/><br/>
+    <form:errors path="name" cssStyle="color: red"/>
+
+    Price : <form:input path="price"/><br/><br/>
+    <form:errors path="name" cssStyle="color: red"/>
     Type : <form:select path="type">
-                <form:options items="${dto.validTypes}" />
-            </form:select><br/><br/>
-    <input type="submit" value="Add Product" />
+    <form:options items="${dto.validTypes}"/>
+</form:select><br/><br/>
+    <input type="submit" value="Add Product"/>
 </form:form>
 
 </body>
