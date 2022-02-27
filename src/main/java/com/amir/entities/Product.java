@@ -19,7 +19,7 @@ public class Product {
     @Column
     private String name;
     @Column
-    private String pri1ce;
+    private String price;
 
     private Date createDate;
     private Date UpdateDate;
