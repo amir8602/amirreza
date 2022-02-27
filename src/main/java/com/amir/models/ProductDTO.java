@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,11 +19,16 @@ public class ProductDTO {
 
     private int id;
     @NotEmpty
-    @Size(min=3 , message = "name must be more than 3 chars")
+    @Size(min=3 , message = "{error.name}")
     private String name;
-    @Min(value = 1000 , message = "price should be greater than 1000")
+    @Min(value = 1000 , message = "{error.price}")
     private int price;
     private String type;
+
+    private String color;
+
+    private ArrayList<Integer> sizes;
+
     private Map<String,String> validTypes;
 
     public ProductDTO(){

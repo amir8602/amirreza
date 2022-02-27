@@ -3,6 +3,7 @@ package com.amir.controllers;
 import com.amir.models.ProductDTO;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.ArrayList;
+import java.util.Locale;
 
 
 @Controller
@@ -18,6 +20,9 @@ public class ProductController {
 
     @Autowired
     Logger logger;
+
+    @Autowired
+    MessageSource messageSource;
 
     ArrayList<ProductDTO> list = new ArrayList<ProductDTO>() {
         {
@@ -33,7 +38,10 @@ public class ProductController {
     }
 
     @PostMapping("/save")
-    public String save(@Valid @ModelAttribute("dto") ProductDTO productDTO, BindingResult result) {
+    public String save(@Valid @ModelAttribute("dto") ProductDTO productDTO, BindingResult result , Locale locale) {
+
+       // messageSource.getMessage("error.name" , new Locale(locale.getLanguage()));
+
         if (result.hasErrors()) {
             //Post Back
             return "product-show";
