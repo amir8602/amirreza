@@ -30,7 +30,7 @@ public class HibernateConfig {
     public LocalSessionFactoryBean sessionFactory(DataSource dataSource){
         LocalSessionFactoryBean factoryBean = new LocalSessionFactoryBean();
         factoryBean.setDataSource(dataSource);
-        factoryBean.setPackagesToScan(new String[]{"com.amir.entities"});
+        factoryBean.setPackagesToScan(new String[]{"com.amir.data.entities"});
         factoryBean.setHibernateProperties(hibernateProperties());
         return factoryBean;
     }

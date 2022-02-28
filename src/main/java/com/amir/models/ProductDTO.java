@@ -44,4 +44,13 @@ public class ProductDTO {
         this.price = price;
         this.type = type;
     }
+
+    public static class CREATE extends ProductDTO {
+
+    }
+    @Data
+    public static class DELETE {
+        private int id;
+    }
+
 }

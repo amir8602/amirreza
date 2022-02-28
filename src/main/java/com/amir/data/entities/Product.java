@@ -1,4 +1,4 @@
-package com.amir.entities;
+package com.amir.data.entities;
 
 import lombok.*;
 
@@ -20,6 +20,9 @@ public class Product {
     private String name;
     @Column
     private String price;
+
+    @Column
+    private String color;
 
     private Date createDate;
     private Date UpdateDate;
